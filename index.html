@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syafiq Dealer ONEXOX | Pelan Internet Terbaik & Jimat</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #FFCC00; /* XOX Yellow */
+            --primary-hover: #E6B800;
+            --dark-bg: #121212;
+            --darker-bg: #0a0a0a;
+            --light-text: #f4f4f4;
+            --gray-text: #aaaaaa;
+            --card-bg: #1e1e1e;
+            --success-color: #25D366; /* WhatsApp Green */
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #000;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--success-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebe5d;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--light-text);
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-logo-img {
+            height: 28px;
+            width: auto;
+            filter: brightness(0) invert(1); /* Tukar logo hitam kepada putih untuk tema gelap */
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 5% 80px;
+            text-align: center;
+            background: radial-gradient(circle at top, #2a2a2a, var(--darker-bg));
+            position: relative;
+        }
+
+        .hero-logo-img {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto 20px;
+            display: block;
+            filter: brightness(0) invert(1); /* Tukar kepada putih */
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            max-width: 900px;
+            margin: 0 auto 25px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--gray-text);
+            max-width: 800px;
+            margin: 0 auto 35px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* Plans Section (Pricing Cards) */
+        .plans-section {
+            padding: 60px 5%;
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 40px auto 0;
+        }
+
+        .plan-card {
+            background-color: var(--card-bg);
+            border: 2px solid #333;
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: transform 0.3s, border-color 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .plan-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        .plan-badge {
+            background-color: var(--primary-color);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .plan-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .plan-desc {
+            color: var(--gray-text);
+            font-size: 0.95rem;
+        }
+
+        /* Plan Poster / Image Styling */
+        .plan-image-container {
+            width: 100%;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #444;
+            position: relative;
+            cursor: pointer;
+            background-color: #000;
+        }
+
+        .plan-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .plan-image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--primary-color);
+            text-align: center;
+            padding: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .plan-features {
+            list-style: none;
+            flex-grow: 1;
+            margin-bottom: 30px;
+        }
+
+        .plan-features li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1rem;
+        }
+
+        .plan-features li i {
+            color: var(--primary-color);
+            margin-right: 15px;
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+
+        .plan-features li.custom-emoji-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .plan-features li.custom-emoji-item .emoji-span {
+            margin-right: 12px;
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        /* Online Registration Section */
+        .online-section {
+            padding: 80px 5%;
+            background-color: var(--darker-bg);
+            text-align: center;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .online-content {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px dashed var(--primary-color);
+        }
+
+        .online-icon {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .online-content p {
+            font-size: 1.1rem;
+            color: var(--gray-text);
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background-color: rgba(255, 204, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 4px solid var(--primary-color);
+            text-align: left;
+        }
+
+        /* Lightbox for viewing images */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(255, 204, 0, 0.2);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .lightbox-close:hover {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            padding: 30px 5%;
+            text-align: center;
+            color: var(--gray-text);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.0rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .online-content {
+                padding: 30px 20px;
+            }
+            .nav-logo-img {
+                display: none; /* Sembunyikan logo kecil di navbar pada paparan telefon kecil untuk elakkan sempit */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo-group">
+            <div class="logo">Syafiq<span>Dealer</span></div>
+            <img src="1000405217.png" alt="oneXOX Logo" class="nav-logo-img">
+        </div>
+        <div>
+            <a href="#plans" class="btn" style="padding: 8px 20px; font-size: 0.9rem; width: auto;">Pilih Plan</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Logo Rasmi Baru Ditambah Di Sini -->
+        <img src="1000405217.png" alt="oneXOX 5G with eSIM Logo" class="hero-logo-img">
+        
+        <h1>📱 Bosan Dengan Data Cepat Habis & Simkad Selalu Expired? <br><span class="highlight">Jom Bertukar Ke ONEXOX 5G!</span></h1>
+        <p>Sama ada anda mahukan plan Prepaid yang super-fleksibel atau Postpaid yang berbaloi dengan data bawa ke depan (carry forward), kami ada semuanya dengan harga mampu milik. Pilih pelan idaman anda, daftar dengan mudah secara online hari ini bersama Syafiq Dealer!</p>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="plans" class="plans-section">
+        <h2>Pilih Pelan Terbaik Anda</h2>
+        
+        <div class="plans-grid">
+            <!-- Prepaid Card -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <div class="plan-badge">🔰 PREPAID</div>
+                    <h3 class="plan-title">Plan Prepaid ONEXOX</h3>
+                    <p class="plan-desc">Bebas komitmen harian, jimat gila-gila!</p>
+                </div>
+
+                <!-- Gambar Poster Prepaid -->
+                <div class="plan-image-container" onclick="openLightbox('1000383047.jpg')">
+                    <img src="1000383047.jpg" alt="Poster Plan Prepaid ONEXOX">
+                    <div class="image-overlay">
+                        <i class="fas fa-search-plus"></i> Sentuh untuk besarkan gambar
+                    </div>
+                </div>
+
+                <ul class="plan-features">
+                    <li class="custom-emoji-item"><span class="emoji-span">💰</span> <div><strong>Bermula dari RM22/bulan</strong></div></li>
+                    <li class="custom-emoji-item"><span class="emoji-span">📶</span> <div><strong>Data sehingga 800GB</strong></div></li>
+                    <li><i class="fas fa-check-circle"></i> Unlimited Call</li>
+                    <li><i class="fas fa-check-circle"></i> Hotspot menggunakan kuota data utama</li>
+                    <li><i class="fas fa-check-circle"></i> Tempoh sah SIM bermula 60 hari</li>
+                    <li class="custom-emoji-item">
+                        <span class="emoji-span">📅</span> 
+                        <div>
+                            <strong>Tambah Validity:</strong><br>
+                            • 6 bulan (RM30) atau<br>
+                            • 12 bulan (RM48)
+                        </div>
+                    </li>
+                    <li><i class="fas fa-check-circle"></i> Tiada kontrak</li>
+                    <li><i class="fas fa-check-circle"></i> Daftar nombor baharu atau kekalkan nombor lama (MNP)</li>
+                </ul>
+                <a href="https://wasap.my/60177146309/nakplanPrepaid" target="_blank" class="btn btn-whatsapp" style="margin-top: 15px;">
+                    <i class="fab fa-whatsapp"></i> Semak & Daftar Prepaid
+                </a>
+            </div>
+
+            <!-- Postpaid Card -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <div class="plan-badge" style="background-color: #f4f4f4;">⭐ POSTPAID</div>
+                    <h3 class="plan-title">Plan Postpaid ONEXOX</h3>
+                    <p class="plan-desc">Internet melimpah, sifar pembaziran data.</p>
+                </div>
+
+                <!-- Gambar Poster Postpaid -->
+                <div class="plan-image-container" onclick="openLightbox('1000390927.jpg')">
+                    <img src="1000390927.jpg" alt="Poster Plan Postpaid ONEXOX">
+                    <div class="image-overlay">
+                        <i class="fas fa-search-plus"></i> Sentuh untuk besarkan gambar
+                    </div>
+                </div>
+
+                <ul class="plan-features">
+                    <li class="custom-emoji-item"><span class="emoji-span">📱</span> <div><strong>Plan Postpaid Bermula RM35/Bulan</strong></div></li>
+                    <li class="custom-emoji-item"><span class="emoji-span">📶</span> <div><strong>Data Sehingga 800GB</strong></div></li>
+                    <li class="custom-emoji-item"><span class="emoji-span">💚</span> <div><strong>Jimat • Mudah • Berbaloi</strong></div></li>
+                    <li><i class="fas fa-check-circle"></i> Unlimited Call</li>
+                    <li><i class="fas fa-check-circle"></i> Data yang tidak digunakan akan Carry Forward ke bulan seterusnya</li>
+                    <li><i class="fas fa-check-circle"></i> Pelbagai pilihan plan mengikut keperluan</li>
+                    <li><i class="fas fa-check-circle"></i> Daftar nombor baharu atau kekalkan nombor lama (MNP)</li>
+                </ul>
+                <div style="margin-top: auto;">
+                    <p style="text-align: center; font-size: 0.85rem; color: var(--gray-text); margin-bottom: 10px;">Sesuai untuk anda yang menggunakan internet tegar setiap hari.</p>
+                    <a href="https://wasap.my/60177146309/nakplanPostpaid" target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Semak & Daftar Postpaid
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Registration Section -->
+    <section class="online-section">
+        <div class="online-content">
+            <i class="fas fa-globe online-icon"></i>
+            <h2>Daftar Simkad ONEXOX <span class="highlight">Secara Online</span></h2>
+            
+            <p style="margin-top: 20px;">Duduk jauh atau tak sempat keluar rumah? Tak perlu risau! Daftar secara online sahaja.</p>
+            
+            <div class="highlight-box">
+                <p style="margin: 0; color: #fff;">
+                    <i class="fas fa-shipping-fast" style="color: var(--primary-color); font-size: 1.5rem; margin-right: 10px; vertical-align: middle;"></i> 
+                    <strong>HQ ONEXOX akan menghantar simkad terus ke alamat rumah anda.</strong> Mudah, cepat dan tak perlu keluar rumah.
+                </p>
+            </div>
+
+            <a href="https://onexox.my/onlinestore/dealer.php?dlr=DYSD90960" target="_blank" class="btn">
+                <i class="fas fa-mouse-pointer"></i> Klik Di Sini Untuk Daftar Online
+            </a>
+        </div>
+    </section>
+
+    <!-- Lightbox Element -->
+    <div id="imageLightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightboxImg" class="lightbox-content" src="" alt="Paparan Besar">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Syafiq Dealer onXOX. Pengedar Sah. Hak Cipta Terpelihara.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Lightbox Functions
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('imageLightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Elakkan tatalan latar belakang semasa aktif
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('imageLightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Kembalikan kebolehan tatal biasa
+        }
+    </script>
+</body>
