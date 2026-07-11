@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth scroll-pt-24">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyafiqFix PS4 JB | Pakar Baiki & Servis PS4 Johor Bahru</title>
+    <meta name="description" content="Pakar servis dan baiki PS4 di Johor Bahru. Selesaikan masalah PS4 bising, panas, dan tukar thermal paste dengan hanya RM86 di Skudai.">
+    
+    <!-- Open Graph (OG) Tags untuk perkongsian di Media Sosial / WhatsApp -->
+    <meta property="og:title" content="SyafiqFix PS4 JB | Pakar Baiki & Servis PS4 Johor Bahru">
+    <meta property="og:description" content="PS4 cepat panas dan bising macam jet? Selesaikan masalah ini dengan Pakej Servis RM86 di Skudai, Johor Bahru. Tempah sekarang!">
+    <meta property="og:image" content="1000406653.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://syafiqfixps4jb.com">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config for Custom PlayStation Blue Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        psblue: {
+                            400: '#3b82f6',
+                            500: '#00439c', // Classic PS Blue
+                            600: '#003780',
+                            900: '#001a40',
+                        },
+                        dark: '#0b0f19',
+                        darker: '#05070c'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+        }
+        .hero-pattern {
+            background-image: linear-gradient(to right, rgba(11, 15, 25, 0.95), rgba(11, 15, 25, 0.90)), url('https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .glow-text {
+            text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-psblue-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i class="fa-brands fa-playstation text-psblue-400 text-3xl"></i>
+                    <span class="font-bold text-xl md:text-2xl tracking-tight text-white">SyafiqFix <span class="text-psblue-400">PS4</span> JB</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="#masalah" class="text-gray-300 hover:text-psblue-400 font-medium transition">Tanda Rosak</a>
+                    <a href="#hasil" class="text-gray-300 hover:text-psblue-400 font-medium transition">Hasil Kerja</a>
+                    <a href="#servis" class="text-gray-300 hover:text-psblue-400 font-medium transition">Pakej RM86</a>
+                    <a href="#lokasi" class="text-gray-300 hover:text-psblue-400 font-medium transition">Lokasi</a>
+                    <a href="#faq" class="text-gray-300 hover:text-psblue-400 font-medium transition">FAQ</a>
+                    <a href="https://wa.me/60177146309?text=Salam,%20saya%20nak%20hantar%20PS4%20untuk%20servis.%20Model%20PS4%20saya:%20__________%20(Fat%20/%20Slim%20/%20Pro).%20Masalah%20yang%20dihadapi:%20__________.%20Boleh%20bantu%20saya?" target="_blank" class="bg-psblue-500 hover:bg-psblue-400 text-white px-6 py-2 rounded-full font-semibold transition shadow-lg shadow-psblue-500/30 transform hover:scale-105">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none text-2xl p-2">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darker border-t border-gray-800 absolute w-full shadow-2xl">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#masalah" class="mobile-link block px-4 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition">Tanda Rosak</a>
+                <a href="#hasil" class="mobile-link block px-4 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition">Hasil Kerja</a>
+                <a href="#servis" class="mobile-link block px-4 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition">Pakej RM86</a>
+                <a href="#lokasi" class="mobile-link block px-4 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition">Lokasi</a>
+                <a href="#faq" class="mobile-link block px-4 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition">FAQ (Soalan Lazim)</a>
+                <a href="https://wa.me/60177146309?text=Salam,%20saya%20nak%20hantar%20PS4%20untuk%20servis.%20Model%20PS4%20saya:%20__________%20(Fat%20/%20Slim%20/%20Pro).%20Masalah%20yang%20dihadapi:%20__________.%20Boleh%20bantu%20saya?" target="_blank" class="block px-4 py-3 text-base font-bold text-center text-white bg-green-600 hover:bg-green-500 rounded-lg mt-4 transition shadow-lg">
+                    <i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp SyafiqFix
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-psblue-600 rounded-full mix-blend-multiply filter blur-[100px] opacity-30 animate-pulse"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-12 md:py-20 flex flex-col lg:flex-row items-center gap-10">
+            
+            <!-- Bahagian Teks (Kiri) -->
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <div class="inline-block px-5 py-2 rounded-full border border-psblue-500/50 bg-psblue-900/40 text-psblue-300 text-sm font-semibold mb-6 backdrop-blur-md">
+                    <i class="fa-solid fa-gamepad mr-2"></i> Pakar Servis PS4 Johor Bahru
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                    Sudah Lama PS4 <span class="text-psblue-400 glow-text">Tak Diservis?</span>
+                </h1>
+                
+                <p class="text-xl text-gray-300 mb-8 font-light max-w-2xl mx-auto lg:mx-0">
+                    Habuk dan thermal paste yang kering boleh menyebabkan PS4 cepat panas dan kipas berbunyi kuat. Selamatkan konsol anda hari ini!
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="https://wa.me/60177146309?text=Salam,%20saya%20nak%20hantar%20PS4%20untuk%20servis.%20Model%20PS4%20saya:%20__________%20(Fat%20/%20Slim%20/%20Pro).%20Masalah%20yang%20dihadapi:%20__________.%20Boleh%20bantu%20saya?" target="_blank" class="bg-psblue-500 hover:bg-psblue-400 text-white px-8 py-4 rounded-xl font-bold text-lg transition shadow-[0_0_20px_rgba(59,130,246,0.5)] transform hover:-translate-y-1 flex items-center justify-center">
+                        <i class="fa-brands fa-whatsapp text-2xl mr-2"></i> Tempah Slot Servis
+                    </a>
+                    <a href="#masalah" class="bg-gray-800 hover:bg-gray-700 border border-gray-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition flex items-center justify-center">
+                        Kenal Pasti Masalah
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bahagian Poster Gambar (Kanan) -->
+            <div class="lg:w-1/2 w-full mt-10 lg:mt-0">
+                <div class="relative rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(59,130,246,0.3)] border border-gray-700 group">
+                    <img src="1000406653.png" alt="SyafiqFix Servis PS4 Johor Bahru" class="w-full h-[400px] md:h-[500px] object-cover transform transition duration-700 group-hover:scale-105">
+                    
+                    <!-- Kecerunan Hitam di Bawah Gambar untuk Teks -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                    
+                    <!-- Lencana Kepercayaan di Atas Gambar -->
+                    <div class="absolute bottom-6 left-6 right-6 text-left">
+                        <div class="inline-flex items-center bg-green-500/90 backdrop-blur-sm text-white text-sm font-bold px-4 py-1.5 rounded-full mb-3 shadow-lg">
+                            <i class="fa-solid fa-shield-check mr-2"></i> Ketelitian Dijamin
+                        </div>
+                        <h3 class="text-2xl font-bold text-white leading-tight mb-2">Servis Cermat & Teliti</h3>
+                        <p class="text-gray-300 text-sm">Setiap unit PS4 dikendalikan dengan penuh berhati-hati untuk memastikan prestasi kembali cemerlang tanpa kerosakan.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="masalah" class="py-20 bg-darker border-y border-gray-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">PS4 anda ada masalah seperti di bawah?</h2>
+                    <p class="text-gray-400 text-lg mb-8">Masalah ini selalunya berpunca daripada habuk yang terkumpul di dalam PS4 atau thermal paste yang telah kering.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center bg-gray-900 p-4 rounded-xl border border-red-900/30">
+                            <div class="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center text-red-500 mr-4 flex-shrink-0">
+                                <i class="fa-solid fa-xmark text-xl"></i>
+                            </div>
+                            <span class="text-lg font-semibold text-gray-200">Kipas berbunyi kuat</span>
+                        </div>
+                        
+                        <div class="flex items-center bg-gray-900 p-4 rounded-xl border border-red-900/30">
+                            <div class="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center text-red-500 mr-4 flex-shrink-0">
+                                <i class="fa-solid fa-xmark text-xl"></i>
+                            </div>
+                            <span class="text-lg font-semibold text-gray-200">PS4 cepat panas</span>
+                        </div>
+                        
+                        <div class="flex items-center bg-gray-900 p-4 rounded-xl border border-red-900/30">
+                            <div class="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center text-red-500 mr-4 flex-shrink-0">
+                                <i class="fa-solid fa-xmark text-xl"></i>
+                            </div>
+                            <span class="text-lg font-semibold text-gray-200">Game lag atau sangkut-sangkut</span>
+                        </div>
+                        
+                        <div class="flex items-center bg-gray-900 p-4 rounded-xl border border-red-900/30">
+                            <div class="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center text-red-500 mr-4 flex-shrink-0">
+                                <i class="fa-solid fa-xmark text-xl"></i>
+                            </div>
+                            <span class="text-lg font-semibold text-gray-200">Tiba-tiba auto off</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 w-full">
+                    <img src="https://images.unsplash.com/photo-1605901309584-818e25960b8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="PS4 Motherboard" class="rounded-2xl shadow-2xl border border-gray-700 w-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Section -->
+    <section id="hasil" class="py-20 bg-[#080b13] relative border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="text-psblue-400 font-semibold tracking-wider uppercase text-sm">Bukti Kualiti Kerja</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4 text-white">Kenapa PS4 Anda Bising & Panas?</h2>
+                <p class="text-gray-400 text-lg max-w-3xl mx-auto">Inilah keadaan sebenar cip pemprosesan (APU) PS4 apabila thermal paste sudah kering dan mengeras dari masa ke masa.</p>
+                <div class="w-24 h-1 bg-psblue-500 mx-auto rounded-full mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Sebelum -->
+                <div class="bg-gray-900 rounded-2xl overflow-hidden border border-red-900/40 shadow-[0_0_20px_rgba(239,68,68,0.1)] group relative flex flex-col">
+                    <div class="absolute top-4 left-4 bg-red-600 text-white font-bold px-4 py-1.5 rounded-full z-10 text-xs tracking-wider shadow-lg">
+                        <i class="fa-solid fa-triangle-exclamation mr-1"></i> SEBELUM
+                    </div>
+                    <div class="overflow-hidden h-[250px] sm:h-[350px]">
+                        <img src="1000408403.jpg" alt="Thermal Paste Kering Sebelum" class="w-full h-full object-cover transform transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6 md:p-8 flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center"><span class="text-red-500 mr-2">❌</span> Thermal Paste Kering</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Haba dari cip tidak dapat disalurkan dengan baik ke heatsink. Akibatnya, sistem terlalu panas dan kipas terpaksa berpusing pada kelajuan maksimum (bunyi macam jet).</p>
+                    </div>
+                </div>
+
+                <!-- Selepas -->
+                <div class="bg-gray-900 rounded-2xl overflow-hidden border border-green-900/50 shadow-[0_0_20px_rgba(34,197,94,0.1)] group relative flex flex-col">
+                    <div class="absolute top-4 left-4 bg-green-500 text-white font-bold px-4 py-1.5 rounded-full z-10 text-xs tracking-wider shadow-lg">
+                        <i class="fa-solid fa-check mr-1"></i> SELEPAS
+                    </div>
+                    <div class="overflow-hidden h-[250px] sm:h-[350px]">
+                        <img src="1000407075.jpg" alt="Thermal Paste Baharu Selepas" class="w-full h-full object-cover transform transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6 md:p-8 flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center"><span class="text-green-500 mr-2">✅</span> Thermal Paste Baharu</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Permukaan cip dibersihkan rapi dan disapu lapisan thermal paste premium yang baharu. Pemindahan haba kembali lancar, membolehkan PS4 anda kekal sejuk dan senyap.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Pricing Section -->
+    <section id="servis" class="py-20 bg-dark relative">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-10">
+                <div class="inline-block bg-yellow-500/20 border border-yellow-500 text-yellow-500 font-bold px-6 py-2 rounded-full mb-6 text-sm tracking-wider uppercase">
+                    Terbaik & Termurah
+                </div>
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-white">💰 Pakej Servis PS4 – <span class="text-psblue-400">RM86 Sahaja</span></h2>
+                <p class="text-xl text-gray-400">Apa yang termasuk dalam pakej ini?</p>
+            </div>
+
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-700 relative overflow-hidden">
+                <!-- Decorative Circle -->
+                <div class="absolute -top-16 -right-16 w-32 h-32 bg-psblue-600 rounded-full opacity-20 blur-2xl"></div>
+                
+                <ul class="space-y-6 relative z-10">
+                    <li class="flex items-center">
+                        <div class="bg-green-500/20 p-3 rounded-full mr-5 flex-shrink-0 shadow-[0_0_10px_rgba(34,197,94,0.3)]">
+                            <i class="fa-solid fa-check text-green-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white">Cuci habuk di bahagian dalaman PS4</h3>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="bg-green-500/20 p-3 rounded-full mr-5 flex-shrink-0 shadow-[0_0_10px_rgba(34,197,94,0.3)]">
+                            <i class="fa-solid fa-check text-green-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white">Tukar thermal paste baharu</h3>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="bg-green-500/20 p-3 rounded-full mr-5 flex-shrink-0 shadow-[0_0_10px_rgba(34,197,94,0.3)]">
+                            <i class="fa-solid fa-check text-green-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white">Tukar thermal pad (jika diperlukan)</h3>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="bg-green-500/20 p-3 rounded-full mr-5 flex-shrink-0 shadow-[0_0_10px_rgba(34,197,94,0.3)]">
+                            <i class="fa-solid fa-check text-green-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white">Pemeriksaan ringkas selepas servis</h3>
+                    </li>
+                </ul>
+                
+                <!-- ETA Banner -->
+                <div class="mt-10 bg-psblue-900/30 border border-psblue-500/30 rounded-2xl p-6 text-center flex flex-col md:flex-row items-center justify-center gap-6">
+                    <i class="fa-solid fa-stopwatch text-5xl text-psblue-400"></i>
+                    <div class="text-left">
+                        <h4 class="text-2xl font-bold text-white mb-2">⏱️ Siap Dalam 1–2 Hari</h4>
+                        <p class="text-gray-300 text-sm leading-relaxed">Tempoh servis biasanya mengambil masa 1 hingga 2 hari. Selepas servis selesai, setiap PS4 akan diuji terlebih dahulu bagi memastikan semuanya berfungsi dengan baik sebelum diserahkan kepada pelanggan.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-10 text-center">
+                    <a href="https://wa.me/60177146309?text=Salam,%20saya%20nak%20hantar%20PS4%20untuk%20servis.%20Model%20PS4%20saya:%20__________%20(Fat%20/%20Slim%20/%20Pro).%20Masalah%20yang%20dihadapi:%20__________.%20Boleh%20bantu%20saya?" target="_blank" class="inline-block w-full md:w-auto bg-psblue-600 hover:bg-psblue-500 text-white px-10 py-5 rounded-2xl font-bold text-xl transition shadow-[0_0_20px_rgba(59,130,246,0.4)] transform hover:scale-105">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> Tempah Pakej RM86 Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="lokasi" class="py-16 bg-psblue-900/20 border-t border-psblue-900/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <i class="fa-solid fa-map-location-dot text-5xl text-psblue-400 mb-6"></i>
+            <h2 class="text-3xl font-bold mb-6">Lokasi Servis Kami</h2>
+            <div class="bg-darker inline-block px-8 py-6 rounded-2xl border border-gray-700 shadow-xl">
+                <p class="text-xl md:text-2xl text-gray-200 mb-2">
+                    Servis dibuat dari rumah di
+                </p>
+                <p class="text-2xl md:text-3xl font-extrabold text-psblue-400">
+                    Taman Teratai, Skudai,<br>Johor Bahru.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-darker border-t border-gray-800">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Soalan Lazim (FAQ)</h2>
+                <div class="w-24 h-1 bg-psblue-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none transition hover:bg-gray-800">
+                        <span class="font-bold text-lg text-gray-200 pr-4">Boleh ke saya tunggu semasa PS4 diservis?</span>
+                        <i class="fa-solid fa-chevron-down text-psblue-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 bg-gray-900">
+                        <p class="px-6 pb-5 text-gray-400">
+                            Maaf, buat masa ini pelanggan tidak dapat menunggu di lokasi kerana servis dijalankan dari rumah. Anda hanya perlu tinggalkan PS4 kepada saya. Selepas proses servis dan ujian selesai, saya akan menghubungi anda melalui WhatsApp untuk pengambilan. Tempoh servis biasanya mengambil masa 1–2 hari.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 bg-psblue-900 text-center px-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Jom kembalikan prestasi asal PS4 anda!</h2>
+            <a href="https://wa.me/60177146309?text=Salam,%20saya%20nak%20hantar%20PS4%20untuk%20servis.%20Model%20PS4%20saya:%20__________%20(Fat%20/%20Slim%20/%20Pro).%20Masalah%20yang%20dihadapi:%20__________.%20Boleh%20bantu%20saya?" target="_blank" class="inline-flex items-center justify-center bg-green-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-600 transition shadow-lg transform hover:scale-105">
+                <i class="fa-brands fa-whatsapp text-2xl mr-3"></i> Hubungi Melalui WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black pt-10 pb-6 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <i class="fa-brands fa-playstation text-psblue-400 text-2xl"></i>
+                <span class="font-bold text-lg text-white">SyafiqFix <span class="text-psblue-400">PS4</span> JB</span>
+            </div>
+            
+            <p class="text-gray-500 text-sm text-center">
+                &copy; 2026 SyafiqFix PS4 JB. Hak Cipta Terpelihara.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button (Mobile/Desktop friendly) -->
+    <a href="https://wa.me/60177146309?text=Salam,%20saya%20nak%20hantar%20PS4%20untuk%20servis.%20Model%20PS4%20saya:%20__________%20(Fat%20/%20Slim%20/%20Pro).%20Masalah%20yang%20dihadapi:%20__________.%20Boleh%20bantu%20saya?" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-[0_4px_15px_rgba(34,197,94,0.5)] hover:bg-green-600 transition transform hover:scale-110 z-50 animate-bounce">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript for Interactions -->
+    <script>
+        // Navbar Scrolled Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('bg-dark/95', 'backdrop-blur-md', 'shadow-lg', 'border-b', 'border-gray-800');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.add('bg-transparent');
+                navbar.classList.remove('bg-dark/95', 'backdrop-blur-md', 'shadow-lg', 'border-b', 'border-gray-800');
+            }
+        });
+
+        // Mobile Menu Toggle Fix
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // FAQ Accordion Logic
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                
+                // Jika tab ini sudah dibuka, tutup tab ini
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.classList.remove('rotate-180');
+                } else {
+                    // Tutup semua tab yang lain dahulu
+                    document.querySelectorAll('.faq-content').forEach(c => {
+                        c.style.maxHeight = null;
+                    });
+                    document.querySelectorAll('.faq-btn i').forEach(i => {
+                        i.classList.remove('rotate-180');
+                    });
+                    
+                    // Buka tab yang diklik
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+    </script>
+</body>
