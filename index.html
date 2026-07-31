@@ -126,11 +126,11 @@
         .logo-group {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.3rem; /* Saiz diselaraskan */
             font-weight: 800;
             color: var(--light-text);
             white-space: nowrap;
@@ -141,7 +141,7 @@
         }
 
         .nav-logo-img {
-            height: 28px;
+            height: 24px;
             width: auto;
             filter: invert(1);
             opacity: 0.9;
@@ -149,7 +149,14 @@
 
         .nav-buttons {
             display: flex;
-            gap: 10px;
+            gap: 8px;
+        }
+
+        .nav-btn {
+            padding: 8px 15px;
+            font-size: 0.85rem;
+            width: auto;
+            box-shadow: none;
         }
 
         /* Hero Section */
@@ -175,7 +182,7 @@
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.1rem; 
             max-width: 900px;
             margin: 0 auto 25px;
             font-weight: 800;
@@ -538,8 +545,21 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            nav {
+                padding: 12px 4%;
+            }
+            .logo {
+                font-size: 1.1rem; /* Saiz lebih kecil untuk tablet/telefon */
+            }
+            .nav-buttons {
+                gap: 5px;
+            }
+            .nav-btn {
+                padding: 6px 10px;
+                font-size: 0.75rem; /* Saiz font butang lebih kecil */
+            }
             .hero h1 {
-                font-size: 2.0rem;
+                font-size: 1.7rem; 
             }
             .hero p {
                 font-size: 1.05rem;
@@ -553,9 +573,19 @@
             .plan-card {
                 padding: 30px 20px;
             }
-            .nav-buttons a {
-                padding: 8px 12px;
-                font-size: 0.8rem;
+        }
+        
+        /* Ekstra responsif untuk skrin telefon yang sangat kecil */
+        @media (max-width: 380px) {
+            .logo {
+                font-size: 1rem;
+            }
+            .nav-btn {
+                padding: 5px 8px;
+                font-size: 0.65rem;
+            }
+            .nav-btn i {
+                display: none; /* Sembunyikan ikon pada skrin sangat kecil supaya muat */
             }
         }
     </style>
@@ -569,10 +599,10 @@
             <img src="1000405217.png" alt="oneXOX Logo" class="nav-logo-img" onerror="this.onerror=null; this.src='https://placehold.co/100x30/000/FFF?text=ONEXOX';">
         </div>
         <div class="nav-buttons">
-            <a href="https://corporate.celcomdigi.com/network/checker" target="_blank" class="btn btn-outline" style="padding: 8px 18px; font-size: 0.9rem; width: auto; box-shadow: none;">
+            <a href="https://corporate.celcomdigi.com/network/checker" target="_blank" class="btn btn-outline nav-btn">
                 <i class="fas fa-map-marker-alt"></i> Semak Liputan
             </a>
-            <a href="#plans" class="btn" style="padding: 8px 18px; font-size: 0.9rem; width: auto; box-shadow: none;">Pilih Plan</a>
+            <a href="#plans" class="btn nav-btn">Pilih Plan</a>
         </div>
     </nav>
 
@@ -728,7 +758,7 @@
     <!-- Online Registration Section -->
     <section class="online-section">
         <div class="online-content">
-            <i class="fas fa-globe online-icon"></i>
+            <i class="fas fa-shopping-cart online-icon"></i>
             <h2>Daftar Simkad ONEXOX <span class="highlight">Secara Online</span></h2>
             
             <p style="margin-top: 20px;">Duduk jauh atau tak sempat keluar rumah? Tak perlu risau! Daftar secara online sahaja.</p>
@@ -741,7 +771,7 @@
             </div>
 
             <a href="https://onexox.my/onlinestore/dealer.php?dlr=DYSD90960" target="_blank" class="btn">
-                <i class="fas fa-mouse-pointer"></i> Klik Di Sini Untuk Daftar Online
+                <i class="fas fa-shopping-cart"></i> Beli Terus Online
             </a>
         </div>
     </section>
