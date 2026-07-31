@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ms">
 <head>
@@ -35,6 +36,7 @@
             background-color: var(--dark-bg);
             color: var(--light-text);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         a {
@@ -60,7 +62,10 @@
 
         /* Buttons */
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
             background-color: var(--primary-color);
             color: #000;
             padding: 15px 30px;
@@ -71,7 +76,7 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.2);
             width: 100%;
         }
 
@@ -84,7 +89,7 @@
         .btn-whatsapp {
             background-color: var(--success-color);
             color: white;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
         }
 
         .btn-whatsapp:hover {
@@ -127,7 +132,7 @@
         .nav-logo-img {
             height: 28px;
             width: auto;
-            filter: invert(1); /* Tukar jadi ini */
+            filter: invert(1);
             opacity: 0.9;
         }
 
@@ -137,26 +142,31 @@
             text-align: center;
             background: radial-gradient(circle at top, #2a2a2a, var(--darker-bg));
             position: relative;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .hero-logo-img {
             max-width: 280px;
             width: 100%;
             height: auto;
-            margin: 0 auto 20px;
+            margin: 0 auto 30px;
             display: block;
-            filter: invert(1); /* Tukar jadi ini */
+            filter: invert(1);
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             max-width: 900px;
             margin: 0 auto 25px;
             font-weight: 800;
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--gray-text);
             max-width: 800px;
             margin: 0 auto 35px;
@@ -164,9 +174,98 @@
             line-height: 1.8;
         }
 
+        /* Features/Highlights Bar */
+        .features-bar {
+            background-color: var(--card-bg);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding: 40px 5%;
+        }
+
+        .features-bar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .feature-item {
+            padding: 15px;
+        }
+
+        .feature-item .icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .feature-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            line-height: 1.4;
+        }
+
+        /* Why Choose Us Section */
+        .why-section {
+            padding: 80px 5%;
+            background-color: var(--darker-bg);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 40px auto 0;
+        }
+
+        .why-card {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .why-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.05);
+        }
+
+        .why-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+        }
+
+        .why-card p {
+            color: var(--gray-text);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
         /* Plans Section (Pricing Cards) */
         .plans-section {
-            padding: 60px 5%;
+            padding: 80px 5%;
+            background-color: var(--dark-bg);
         }
 
         .plans-grid {
@@ -174,7 +273,7 @@
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
             max-width: 1100px;
-            margin: 40px auto 0;
+            margin: 50px auto 0;
         }
 
         .plan-card {
@@ -182,15 +281,16 @@
             border: 2px solid #333;
             border-radius: 20px;
             padding: 40px 30px;
-            transition: transform 0.3s, border-color 0.3s;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
             position: relative;
             display: flex;
             flex-direction: column;
         }
 
         .plan-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             border-color: var(--primary-color);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
         }
 
         .plan-header {
@@ -203,12 +303,13 @@
         .plan-badge {
             background-color: var(--primary-color);
             color: #000;
-            padding: 5px 15px;
-            border-radius: 20px;
+            padding: 6px 18px;
+            border-radius: 30px;
             font-size: 0.9rem;
             font-weight: 700;
             display: inline-block;
             margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
         .plan-title {
@@ -231,17 +332,22 @@
             position: relative;
             cursor: pointer;
             background-color: #000;
+            aspect-ratio: 3/4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .plan-image-container img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
 
         .plan-image-container:hover img {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         .image-overlay {
@@ -249,16 +355,21 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
             color: var(--primary-color);
             text-align: center;
-            padding: 8px;
-            font-size: 0.85rem;
+            padding: 10px;
+            font-size: 0.9rem;
             font-weight: 600;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .plan-image-container:hover .image-overlay {
+            background: rgba(0, 0, 0, 0.9);
         }
 
         .plan-features {
@@ -272,12 +383,13 @@
             display: flex;
             align-items: flex-start;
             font-size: 1rem;
+            line-height: 1.5;
         }
 
         .plan-features li i {
             color: var(--primary-color);
             margin-right: 15px;
-            margin-top: 5px;
+            margin-top: 4px;
             font-size: 1.1rem;
         }
 
@@ -288,8 +400,8 @@
 
         .plan-features li.custom-emoji-item .emoji-span {
             margin-right: 12px;
-            font-size: 1.2rem;
-            line-height: 1.4;
+            font-size: 1.3rem;
+            line-height: 1.3;
         }
 
         /* Online Registration Section */
@@ -308,6 +420,7 @@
             padding: 50px;
             border-radius: 20px;
             border: 1px dashed var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .online-icon {
@@ -323,9 +436,9 @@
         }
 
         .highlight-box {
-            background-color: rgba(255, 204, 0, 0.1);
-            padding: 20px;
-            border-radius: 10px;
+            background-color: rgba(255, 204, 0, 0.05);
+            padding: 25px;
+            border-radius: 12px;
             margin: 30px 0;
             border-left: 4px solid var(--primary-color);
             text-align: left;
@@ -339,22 +452,26 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.95);
             z-index: 2000;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .lightbox.active {
             display: flex;
+            opacity: 1;
         }
 
         .lightbox-content {
             max-width: 90%;
-            max-height: 85vh;
+            max-height: 90vh;
             border-radius: 10px;
-            box-shadow: 0 0 25px rgba(255, 204, 0, 0.2);
+            box-shadow: 0 0 30px rgba(255, 204, 0, 0.15);
+            object-fit: contain;
         }
 
         .lightbox-close {
@@ -362,9 +479,10 @@
             top: 20px;
             right: 30px;
             color: #fff;
-            font-size: 2.5rem;
+            font-size: 3rem;
             cursor: pointer;
             transition: color 0.3s;
+            z-index: 2001;
         }
 
         .lightbox-close:hover {
@@ -377,7 +495,12 @@
             padding: 30px 5%;
             text-align: center;
             color: var(--gray-text);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            border-top: 1px solid #222;
+        }
+
+        footer p {
+            margin-bottom: 8px;
         }
 
         /* Responsive Design */
@@ -386,13 +509,16 @@
                 font-size: 2.0rem;
             }
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.05rem;
             }
             .online-content {
-                padding: 30px 20px;
+                padding: 40px 20px;
             }
             .nav-logo-img {
-                display: none; /* Sembunyikan logo kecil di navbar pada paparan telefon kecil untuk elakkan sempit */
+                display: none; 
+            }
+            .plan-card {
+                padding: 30px 20px;
             }
         }
     </style>
@@ -403,25 +529,82 @@
     <nav>
         <div class="logo-group">
             <div class="logo">Syafiq<span>Dealer</span></div>
-            <img src="1000405217.png" alt="oneXOX Logo" class="nav-logo-img">
+            <img src="1000405217.png" alt="oneXOX Logo" class="nav-logo-img" onerror="this.onerror=null; this.src='https://placehold.co/100x30/000/FFF?text=ONEXOX';">
         </div>
         <div>
-            <a href="#plans" class="btn" style="padding: 8px 20px; font-size: 0.9rem; width: auto;">Pilih Plan</a>
+            <a href="#plans" class="btn" style="padding: 8px 20px; font-size: 0.9rem; width: auto; box-shadow: none;">Pilih Plan</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <!-- Logo Rasmi Baru Ditambah Di Sini -->
-        <img src="1000405217.png" alt="oneXOX 5G with eSIM Logo" class="hero-logo-img">
+        <img src="1000405217.png" alt="oneXOX 5G with eSIM Logo" class="hero-logo-img" onerror="this.onerror=null; this.src='https://placehold.co/280x80/000/FFF?text=ONEXOX+5G';">
         
-        <h1>📱 Bosan Dengan Data Cepat Habis & Simkad Selalu Expired? <br><span class="highlight">Jom Bertukar Ke ONEXOX 5G!</span></h1>
-        <p>Sama ada anda mahukan plan Prepaid yang super-fleksibel atau Postpaid yang berbaloi dengan data bawa ke depan (carry forward), kami ada semuanya dengan harga mampu milik. Pilih plan idaman anda, daftar dengan mudah secara online hari ini bersama Syafiq Dealer!</p>
+        <h1>🚀 Masih Guna Simkad Yang Cepat Expired & Data Selalu Tak Cukup? <br><span class="highlight">Bertukar Ke ONEXOX 5G Hari Ini & Nikmati Lebih Banyak Kelebihan!</span></h1>
+        <p>Tak perlu lagi risau data cepat habis atau plan yang tak berbaloi. Dengan ONEXOX 5G, anda boleh memilih plan Prepaid atau Postpaid yang fleksibel mengikut keperluan dan bajet anda.</p>
+    </section>
+
+    <!-- Features Overview Bar -->
+    <div class="features-bar">
+        <div class="features-bar-grid">
+            <div class="feature-item">
+                <div class="icon"><i class="fas fa-signal"></i></div>
+                <h4>5G</h4>
+                <p><strong>Data 4G/5G</strong><br>Pada peranti dan liputan yang disokong</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                <h4>Panggilan</h4>
+                <p>Tanpa had pada plan terpilih</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon"><i class="fas fa-wifi"></i></div>
+                <h4>Hotspot</h4>
+                <p>Tersedia mengikut plan</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon"><i class="fas fa-sim-card"></i></div>
+                <h4>eSIM</h4>
+                <p><strong>Aktivasi mudah</strong><br>Untuk peranti yang menyokong</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-section">
+        <h2>Kenapa Pilih <span class="highlight">oneXOX?</span></h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-number">1</div>
+                <h3>Lebih data, lebih nilai</h3>
+                <p>Data berganda pada plan terpilih untuk penggunaan harian yang lebih berbaloi.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-number">2</div>
+                <h3>Unlimited Call</h3>
+                <p>Panggilan ke semua rangkaian tanpa caj tersembunyi, tertakluk FUP.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-number">3</div>
+                <h3>Rangkaian 5G terbaik</h3>
+                <p>Menggunakan rangkaian CelcomDigi 5G yang luas, pantas dan stabil.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-number">4</div>
+                <h3>Fleksibel dan mudah</h3>
+                <p>Plan boleh diteruskan dan penggunaan boleh dikawal mengikut keperluan.</p>
+            </div>
+            <div class="why-card" style="grid-column: span auto;">
+                <div class="why-number">5</div>
+                <h3>Aktifkan dengan eSIM</h3>
+                <p>Proses aktivasi pantas dan lebih mudah untuk peranti yang menyokong eSIM.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Plans Section -->
     <section id="plans" class="plans-section">
-        <h2>Pilih plan Terbaik Anda</h2>
+        <h2>Pilih Plan Terbaik Anda</h2>
         
         <div class="plans-grid">
             <!-- Prepaid Card -->
@@ -429,12 +612,12 @@
                 <div class="plan-header">
                     <div class="plan-badge">🔰 PREPAID</div>
                     <h3 class="plan-title">Plan Prepaid ONEXOX</h3>
-                    <p class="plan-desc">Bebas komitmen harian, jimat gila-gila!</p>
+                    <p class="plan-desc">Lebih Fleksibel &bull; Lebih Jimat &bull; Lebih Berbaloi</p>
                 </div>
 
-                <!-- Gambar Poster Prepaid -->
-                <div class="plan-image-container" onclick="openLightbox('1000383047.jpg')">
-                    <img src="1000383047.jpg" alt="Poster Plan Prepaid ONEXOX">
+                <!-- Gambar Poster Prepaid dengan Fallback Placeholder -->
+                <div class="plan-image-container" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="1000383047.jpg" alt="Poster Plan Prepaid ONEXOX" onerror="this.onerror=null; this.src='https://placehold.co/600x800/1e1e1e/FFCC00?text=Poster+Prepaid';">
                     <div class="image-overlay">
                         <i class="fas fa-search-plus"></i> Sentuh untuk besarkan gambar
                     </div>
@@ -457,9 +640,11 @@
                     <li><i class="fas fa-check-circle"></i> Tiada kontrak</li>
                     <li><i class="fas fa-check-circle"></i> Daftar nombor baharu atau kekalkan nombor lama (MNP)</li>
                 </ul>
-                <a href="https://wasap.my/60177146309/nakplanPrepaid" target="_blank" class="btn btn-whatsapp" style="margin-top: 15px;">
-                    <i class="fab fa-whatsapp"></i> Semak & Daftar Prepaid
-                </a>
+                <div style="margin-top: auto;">
+                    <a href="https://wasap.my/60177146309/nakplanPrepaid" target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Semak & Daftar Prepaid
+                    </a>
+                </div>
             </div>
 
             <!-- Postpaid Card -->
@@ -467,12 +652,12 @@
                 <div class="plan-header">
                     <div class="plan-badge" style="background-color: #f4f4f4;">⭐ POSTPAID</div>
                     <h3 class="plan-title">Plan Postpaid ONEXOX</h3>
-                    <p class="plan-desc">Internet melimpah, sifar pembaziran data.</p>
+                    <p class="plan-desc">Lebih Data, Kurang Pembaziran</p>
                 </div>
 
-                <!-- Gambar Poster Postpaid -->
-                <div class="plan-image-container" onclick="openLightbox('1000390927.jpg')">
-                    <img src="1000390927.jpg" alt="Poster Plan Postpaid ONEXOX">
+                <!-- Gambar Poster Postpaid dengan Fallback Placeholder -->
+                <div class="plan-image-container" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="1000390927.jpg" alt="Poster Plan Postpaid ONEXOX" onerror="this.onerror=null; this.src='https://placehold.co/600x800/f4f4f4/1e1e1e?text=Poster+Postpaid';">
                     <div class="image-overlay">
                         <i class="fas fa-search-plus"></i> Sentuh untuk besarkan gambar
                     </div>
@@ -488,7 +673,7 @@
                     <li><i class="fas fa-check-circle"></i> Daftar nombor baharu atau kekalkan nombor lama (MNP)</li>
                 </ul>
                 <div style="margin-top: auto;">
-                    <p style="text-align: center; font-size: 0.85rem; color: var(--gray-text); margin-bottom: 10px;">Sesuai untuk anda yang menggunakan internet tegar setiap hari.</p>
+                    <p style="text-align: center; font-size: 0.85rem; color: var(--gray-text); margin-bottom: 12px;">Sesuai untuk anda yang menggunakan internet tegar setiap hari.</p>
                     <a href="https://wasap.my/60177146309/nakplanPostpaid" target="_blank" class="btn btn-whatsapp">
                         <i class="fab fa-whatsapp"></i> Semak & Daftar Postpaid
                     </a>
@@ -519,14 +704,15 @@
     </section>
 
     <!-- Lightbox Element -->
-    <div id="imageLightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <div id="imageLightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
         <img id="lightboxImg" class="lightbox-content" src="" alt="Paparan Besar">
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Syafiq Dealer oneXOX. Pengedar Sah. Hak Cipta Terpelihara.</p>
+        <p>Maklumat plan tertakluk kepada terma, syarat, liputan dan FUP semasa.</p>
+        <p>2026 Syafiq Dealer oneXOX. Pengedar Sah</p>
     </footer>
 
     <!-- JavaScript -->
@@ -537,13 +723,16 @@
             const lightboxImg = document.getElementById('lightboxImg');
             lightboxImg.src = imageSrc;
             lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Elakkan tatalan latar belakang semasa aktif
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
 
-        function closeLightbox() {
-            const lightbox = document.getElementById('imageLightbox');
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Kembalikan kebolehan tatal biasa
+        function closeLightbox(event) {
+            // Only close if clicking the background or the close button, not the image itself
+            if (event.target.id === 'imageLightbox' || event.target.className === 'lightbox-close') {
+                const lightbox = document.getElementById('imageLightbox');
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }
         }
     </script>
 </body>
