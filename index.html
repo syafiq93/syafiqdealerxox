@@ -86,6 +86,17 @@
             box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
         }
 
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: #000;
+        }
+
         .btn-whatsapp {
             background-color: var(--success-color);
             color: white;
@@ -134,6 +145,11 @@
             width: auto;
             filter: invert(1);
             opacity: 0.9;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
         }
 
         /* Hero Section */
@@ -234,6 +250,8 @@
             padding: 30px;
             position: relative;
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .why-card:hover {
@@ -260,6 +278,21 @@
             color: var(--gray-text);
             font-size: 0.95rem;
             line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .coverage-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+
+        .coverage-link:hover {
+            color: #fff;
         }
 
         /* Plans Section (Pricing Cards) */
@@ -520,6 +553,10 @@
             .plan-card {
                 padding: 30px 20px;
             }
+            .nav-buttons a {
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -531,8 +568,11 @@
             <div class="logo">Syafiq<span>Dealer</span></div>
             <img src="1000405217.png" alt="oneXOX Logo" class="nav-logo-img" onerror="this.onerror=null; this.src='https://placehold.co/100x30/000/FFF?text=ONEXOX';">
         </div>
-        <div>
-            <a href="#plans" class="btn" style="padding: 8px 20px; font-size: 0.9rem; width: auto; box-shadow: none;">Pilih Plan</a>
+        <div class="nav-buttons">
+            <a href="https://corporate.celcomdigi.com/network/checker" target="_blank" class="btn btn-outline" style="padding: 8px 18px; font-size: 0.9rem; width: auto; box-shadow: none;">
+                <i class="fas fa-map-marker-alt"></i> Semak Liputan
+            </a>
+            <a href="#plans" class="btn" style="padding: 8px 18px; font-size: 0.9rem; width: auto; box-shadow: none;">Pilih Plan</a>
         </div>
     </nav>
 
@@ -588,6 +628,9 @@
                 <div class="why-number">3</div>
                 <h3>Rangkaian 5G terbaik</h3>
                 <p>Menggunakan rangkaian CelcomDigi 5G yang luas, pantas dan stabil.</p>
+                <a href="https://corporate.celcomdigi.com/network/checker" target="_blank" class="coverage-link">
+                    Semak Liputan Di Sini <i class="fas fa-external-link-alt" style="font-size: 0.8rem; margin-left: 5px;"></i>
+                </a>
             </div>
             <div class="why-card">
                 <div class="why-number">4</div>
