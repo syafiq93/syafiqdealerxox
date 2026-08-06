@@ -1,4 +1,3 @@
-
 <html lang="ms">
 <head>
     <meta charset="UTF-8">
@@ -10,16 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* CSS Variables */
+        /* CSS Variables - Tema Baru Biru Navy & Kuning */
         :root {
-            --primary-color: #FFCC00; /* XOX Yellow */
+            --primary-color: #FFCC00; /* Kuning Terang XOX */
             --primary-hover: #E6B800;
-            --dark-bg: #121212;
-            --darker-bg: #0a0a0a;
-            --light-text: #f4f4f4;
-            --gray-text: #aaaaaa;
-            --card-bg: #1e1e1e;
+            --dark-bg: #0A1931; /* Biru Navy Utama */
+            --darker-bg: #061124; /* Biru Navy Lebih Gelap */
+            --card-bg: #112240; /* Latar Kad Biru Navy Terang Sikit */
+            --light-text: #ffffff; /* Putih */
+            --gray-text: #a8b2d1; /* Kelabu Gelap/Sokongan */
             --success-color: #25D366; /* WhatsApp Green */
+            --lime-accent: #39FF14; /* Hijau Lime */
+            --border-color: rgba(255, 255, 255, 0.1);
         }
 
         /* Reset & Base Styles */
@@ -112,14 +113,14 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(10, 10, 10, 0.95);
+            background-color: rgba(10, 25, 49, 0.95);
             backdrop-filter: blur(10px);
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .logo-group {
@@ -162,7 +163,7 @@
         .hero {
             padding: 160px 5% 80px;
             text-align: center;
-            background: radial-gradient(circle at top, #2a2a2a, var(--darker-bg));
+            background: radial-gradient(circle at top, #112240, var(--darker-bg));
             position: relative;
             min-height: 80vh;
             display: flex;
@@ -199,8 +200,8 @@
         /* Features/Highlights Bar */
         .features-bar {
             background-color: var(--card-bg);
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
             padding: 40px 5%;
         }
 
@@ -251,7 +252,7 @@
 
         .why-card {
             background-color: var(--card-bg);
-            border: 1px solid #333;
+            border: 1px solid var(--border-color);
             border-radius: 15px;
             padding: 30px;
             position: relative;
@@ -330,7 +331,7 @@
             background-color: var(--card-bg);
             border-radius: 50px;
             padding: 5px;
-            border: 1px solid #333;
+            border: 1px solid var(--border-color);
         }
 
         .tab-btn {
@@ -373,7 +374,7 @@
         
         .sub-tab-btn {
             background-color: var(--card-bg);
-            border: 1px solid #333;
+            border: 1px solid var(--border-color);
             border-radius: 15px;
             padding: 15px 25px;
             color: var(--light-text);
@@ -430,20 +431,40 @@
 
         .catalog-card {
             background-color: var(--card-bg);
-            border: 1px solid #333;
+            border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 35px 25px;
             position: relative;
             display: flex;
             flex-direction: column;
             transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-            overflow: hidden;
+            overflow: hidden; /* Penting untuk memotong kesan glowing hijau supaya tidak terkeluar kotak */
+            z-index: 1;
+        }
+
+        /* Efek Bulatan Hijau Lime di Penjuru Kad */
+        .catalog-card::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, rgba(57, 255, 20, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+            transition: opacity 0.3s;
+            opacity: 0.7;
         }
 
         .catalog-card:hover {
             transform: translateY(-8px);
             border-color: var(--primary-color);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        }
+
+        .catalog-card:hover::before {
+            opacity: 1; /* Efek menyala lebih terang apabila di-hover */
         }
 
         .card-badge {
@@ -497,7 +518,7 @@
             color: var(--gray-text);
             margin-bottom: 25px;
             padding-bottom: 20px;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .card-features {
@@ -526,8 +547,8 @@
             padding: 80px 5%;
             background-color: var(--darker-bg);
             text-align: center;
-            border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .online-content {
@@ -568,7 +589,7 @@
             text-align: center;
             color: var(--gray-text);
             font-size: 0.85rem;
-            border-top: 1px solid #222;
+            border-top: 1px solid var(--border-color);
         }
 
         footer p { margin-bottom: 8px; }
@@ -709,7 +730,7 @@
             <div class="sub-tabs-container">
                 <button class="sub-tab-btn active" onclick="openSubTab(event, 'sub-internet')">
                     <strong>Plan Internet Prabayar</strong>
-                    <span>Data harian, mingguan dan 30 hari</span>
+                    <span>Data 30 Hari</span>
                 </button>
                 <button class="sub-tab-btn" onclick="openSubTab(event, 'sub-tempoh')">
                     <strong>Pakej Tempoh Sah</strong>
@@ -885,7 +906,7 @@
         <div id="tab-postpaid" class="tab-content">
             <div style="text-align: center; margin-bottom: 40px;">
                 <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Plan Internet <span class="highlight">Postpaid</span></h3>
-                <p style="color: var(--gray-text);">Pilihan plan prabayar terbaik dan jimat</p>
+                <p style="color: var(--gray-text);">Pilihan plan postpaid terbaik dan jimat</p>
             </div>
 
             <div class="catalog-grid">
