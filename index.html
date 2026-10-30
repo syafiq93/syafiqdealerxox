@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ms">
 <head>
     <meta charset="UTF-8">
@@ -424,14 +425,36 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Catalog Grid */
+        /* Catalog Grid - Horizontal Scroll Slider */
         .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding-bottom: 25px;
+            padding-top: 10px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) var(--card-bg);
+        }
+
+        .catalog-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .catalog-grid::-webkit-scrollbar-track {
+            background: var(--card-bg);
+            border-radius: 10px;
+        }
+
+        .catalog-grid::-webkit-scrollbar-thumb {
+            background-color: var(--primary-color);
+            border-radius: 10px;
         }
 
         .catalog-card {
+            flex: 0 0 320px;
+            scroll-snap-align: center;
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 20px;
@@ -614,7 +637,7 @@
             .nav-logo-img { display: none; }
             .tabs { width: 100%; justify-content: center; }
             .tab-btn { padding: 10px 20px; font-size: 0.95rem; flex: 1; text-align: center; }
-            .catalog-card { padding: 25px 20px; }
+            .catalog-card { flex: 0 0 280px; padding: 25px 20px; }
             .card-data { font-size: 2rem; }
             
             .sub-tabs-container { gap: 8px; }
@@ -949,6 +972,7 @@
         <!-- TAB 3: MYSISWA -->
         <div id="tab-mysiswa" class="tab-content">
             <div class="catalog-grid">
+                
                 <!-- Plan MYSISWA 1 -->
                 <div class="catalog-card">
                     <div class="card-badge" style="background-color: #3498db; color: #fff;">UNTUK SEMUA</div>
@@ -973,9 +997,8 @@
                             <i class="fas fa-shopping-cart"></i> Beli Terus Online
                         </a>
                     </div>
-                </div>
-
-                <!-- Plan MYSISWA 2: MYSISWA PLUS -->
+                        </div>
+                        <!-- Plan MYSISWA 2: MYSISWA PLUS -->
                 <div class="catalog-card">
                     <div class="card-badge" style="background-color: #8e44ad; color: #fff;">MAIN + 1–9 SUPP</div>
                     <div class="card-category">MYSISWA</div>
