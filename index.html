@@ -332,13 +332,15 @@
             border-radius: 50px;
             padding: 5px;
             border: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .tab-btn {
             background: transparent;
             color: var(--gray-text);
             border: none;
-            padding: 12px 40px;
+            padding: 12px 30px;
             border-radius: 50px;
             font-size: 1.1rem;
             font-weight: 600;
@@ -491,11 +493,17 @@
         .card-title {
             font-size: 1.6rem;
             color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .card-subtitle {
+            color: var(--gray-text);
+            font-size: 0.9rem;
             margin-bottom: 15px;
         }
 
         .card-data {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             font-weight: 800;
             color: var(--primary-color);
             line-height: 1;
@@ -605,9 +613,9 @@
             .online-content { padding: 40px 20px; }
             .nav-logo-img { display: none; }
             .tabs { width: 100%; justify-content: center; }
-            .tab-btn { padding: 10px 20px; font-size: 1rem; flex: 1; }
+            .tab-btn { padding: 10px 20px; font-size: 0.95rem; flex: 1; text-align: center; }
             .catalog-card { padding: 25px 20px; }
-            .card-data { font-size: 2.2rem; }
+            .card-data { font-size: 2rem; }
             
             .sub-tabs-container { gap: 8px; }
             .sub-tab-btn { padding: 10px 5px; }
@@ -619,7 +627,7 @@
             .logo { font-size: 1rem; }
             .nav-btn { padding: 5px 8px; font-size: 0.65rem; }
             .nav-btn i { display: none; }
-            .tab-btn { padding: 10px; font-size: 0.9rem; }
+            .tab-btn { padding: 10px 8px; font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -720,6 +728,7 @@
             <div class="tabs">
                 <button class="tab-btn active" onclick="openTab(event, 'tab-prabayar')">Prabayar</button>
                 <button class="tab-btn" onclick="openTab(event, 'tab-postpaid')">Postpaid</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab-mysiswa')">MYSISWA</button>
             </div>
         </div>
 
@@ -729,11 +738,11 @@
             <!-- Sub-Tabs Navigation -->
             <div class="sub-tabs-container">
                 <button class="sub-tab-btn active" onclick="openSubTab(event, 'sub-internet')">
-                    <strong>Plan Internet Prabayar</strong>
+                    <strong>Internet</strong>
                     <span>Data 30 Hari</span>
                 </button>
                 <button class="sub-tab-btn" onclick="openSubTab(event, 'sub-tempoh')">
-                    <strong>Pakej Tempoh Sah</strong>
+                    <strong>Tempoh Sah</strong>
                     <span>6 bulan atau 12 bulan</span>
                 </button>
             </div>
@@ -741,69 +750,20 @@
             <!-- SUB-TAB CONTENT 1: Plan Internet Prabayar -->
             <div id="sub-internet" class="sub-tab-content active">
                 <div class="catalog-grid">
-                    <!-- Plan 1: X35 BOOST -->
-                    <div class="catalog-card">
-                        <div class="card-badge">HOT SALE</div>
-                        <div class="card-category">Internet Prabayar</div>
-                        <h3 class="card-title">X35 BOOST</h3>
-                        <div class="card-data">600GB <span>DATA</span></div>
-                        <div class="card-price">RM35 <span>/ 30 hari</span></div>
-                        <div class="card-price-desc" style="border:none; margin-bottom: 25px; padding:0;">400GB + 200GB bonus</div>
-                        
-                        <ul class="card-features">
-                            <li><i class="fas fa-check-circle"></i> 600GB untuk 30 hari</li>
-                            <li><i class="fas fa-check-circle"></i> Unlimited Call All-Net*</li>
-                            <li><i class="fas fa-check-circle"></i> Hotspot guna kuota data</li>
-                        </ul>
-                        
-                        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
-                            <a href="https://wa.me/60177146309?text=Hai%20Syafiq,%20saya%20berminat%20dengan%20pakej%20ini:%20*X35%20BOOST%20-%20600GB*%20RM35%20/%2030%20hari" target="_blank" class="btn btn-whatsapp">
-                                <i class="fab fa-whatsapp"></i> WhatsApp Dealer
-                            </a>
-                            <a href="https://onexox.my/onlinestore/dealer.php?dlr=DYSD90960" target="_blank" class="btn btn-outline">
-                                <i class="fas fa-shopping-cart"></i> Beli Terus Online
-                            </a>
-                        </div>
-                    </div>
 
-                    <!-- Plan 2: X48 MAX -->
-                    <div class="catalog-card">
-                        <div class="card-badge">DATA MAX</div>
-                        <div class="card-category">Internet Prabayar</div>
-                        <h3 class="card-title">X48 MAX</h3>
-                        <div class="card-data">800GB <span>DATA</span></div>
-                        <div class="card-price">RM48 <span>/ 30 hari</span></div>
-                        <div class="card-price-desc" style="border:none; margin-bottom: 25px; padding:0;">600GB + 200GB bonus</div>
-                        
-                        <ul class="card-features">
-                            <li><i class="fas fa-check-circle"></i> 800GB untuk 30 hari</li>
-                            <li><i class="fas fa-check-circle"></i> Unlimited Call All-Net*</li>
-                            <li><i class="fas fa-check-circle"></i> Hotspot guna kuota data</li>
-                        </ul>
-                        
-                        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
-                            <a href="https://wa.me/60177146309?text=Hai%20Syafiq,%20saya%20berminat%20dengan%20pakej%20ini:%20*X48%20MAX%20-%20800GB*%20RM48%20/%2030%20hari" target="_blank" class="btn btn-whatsapp">
-                                <i class="fab fa-whatsapp"></i> WhatsApp Dealer
-                            </a>
-                            <a href="https://onexox.my/onlinestore/dealer.php?dlr=DYSD90960" target="_blank" class="btn btn-outline">
-                                <i class="fas fa-shopping-cart"></i> Beli Terus Online
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Plan 3: 1X-22 SAVE -->
+                    <!-- Plan 1: X22 SAVE -->
                     <div class="catalog-card">
                         <div class="card-badge">JIMAT</div>
                         <div class="card-category">Internet Prabayar</div>
-                        <h3 class="card-title">1X-22 SAVE</h3>
-                        <div class="card-data">100GB <span>DATA</span></div>
+                        <h3 class="card-title">X22 SAVE</h3>
+                        <div class="card-subtitle">Cukup data. Ringan belanja.</div>
+                        <div class="card-data">100GB <span>4G/5G</span></div>
                         <div class="card-price">RM22 <span>/ 30 hari</span></div>
                         <div class="card-price-desc" style="border:none; margin-bottom: 25px; padding:0;">30 hari validiti percuma</div>
                         
                         <ul class="card-features">
-                            <li><i class="fas fa-check-circle"></i> 100GB untuk 30 hari</li>
-                            <li><i class="fas fa-check-circle"></i> Unlimited Call All-Net*</li>
-                            <li><i class="fas fa-check-circle"></i> Hotspot guna kuota data</li>
+                            <li><span style="margin-right: 12px; font-size: 1.1rem;">📞</span> Panggilan tanpa had ke semua rangkaian*</li>
+                            <li><span style="margin-right: 12px; font-size: 1.1rem;">🛜</span> Hotspot tanpa had*</li>
                         </ul>
                         
                         <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
@@ -816,23 +776,23 @@
                         </div>
                     </div>
 
-                    <!-- Plan 4: X18 START -->
+                    <!-- Plan 2: X35 BOOST -->
                     <div class="catalog-card">
-                        <div class="card-badge">BAJET</div>
+                        <div class="card-badge">HOT SALE</div>
                         <div class="card-category">Internet Prabayar</div>
-                        <h3 class="card-title">X18 START</h3>
-                        <div class="card-data">30GB <span>DATA</span></div>
-                        <div class="card-price">RM18 <span>/ 30 hari</span></div>
-                        <div class="card-price-desc" style="border:none; margin-bottom: 25px; padding:0;">20 hari validiti percuma</div>
+                        <h3 class="card-title">X35 BOOST</h3>
+                        <div class="card-subtitle">Lebih data untuk setiap hari.</div>
+                        <div class="card-data">600GB <span>4G/5G</span></div>
+                        <div class="card-price">RM35 <span>/ 30 hari</span></div>
+                        <div class="card-price-desc" style="border:none; margin-bottom: 25px; padding:0;">400GB + 200GB bonus</div>
                         
                         <ul class="card-features">
-                            <li><i class="fas fa-check-circle"></i> 30GB untuk 30 hari</li>
-                            <li><i class="fas fa-check-circle"></i> Unlimited Call All-Net*</li>
-                            <li><i class="fas fa-check-circle"></i> 20 hari validiti percuma</li>
+                            <li><span style="margin-right: 12px; font-size: 1.1rem;">📞</span> Panggilan tanpa had ke semua rangkaian*</li>
+                            <li><span style="margin-right: 12px; font-size: 1.1rem;">🛜</span> Hotspot tanpa had*</li>
                         </ul>
                         
                         <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
-                            <a href="https://wa.me/60177146309?text=Hai%20Syafiq,%20saya%20berminat%20dengan%20pakej%20ini:%20*X18%20START%20-%2030GB*%20RM18%20/%2030%20hari" target="_blank" class="btn btn-whatsapp">
+                            <a href="https://wa.me/60177146309?text=Hai%20Syafiq,%20saya%20berminat%20dengan%20pakej%20ini:%20*X35%20BOOST%20-%20600GB*%20RM35%20/%2030%20hari" target="_blank" class="btn btn-whatsapp">
                                 <i class="fab fa-whatsapp"></i> WhatsApp Dealer
                             </a>
                             <a href="https://onexox.my/onlinestore/dealer.php?dlr=DYSD90960" target="_blank" class="btn btn-outline">
@@ -840,26 +800,52 @@
                             </a>
                         </div>
                     </div>
+
+                    <!-- Plan 3: X48 MAX -->
+                    <div class="catalog-card">
+                        <div class="card-badge">DATA MAX</div>
+                        <div class="card-category">Internet Prabayar</div>
+                        <h3 class="card-title">X48 MAX</h3>
+                        <div class="card-subtitle">Banyak data. Banyak boleh buat.</div>
+                        <div class="card-data">800GB <span>4G/5G</span></div>
+                        <div class="card-price">RM48 <span>/ 30 hari</span></div>
+                        <div class="card-price-desc" style="border:none; margin-bottom: 25px; padding:0;">600GB + 200GB bonus</div>
+                        
+                        <ul class="card-features">
+                            <li><span style="margin-right: 12px; font-size: 1.1rem;">📞</span> Panggilan tanpa had ke semua rangkaian*</li>
+                            <li><span style="margin-right: 12px; font-size: 1.1rem;">🛜</span> Hotspot tanpa had*</li>
+                        </ul>
+                        
+                        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
+                            <a href="https://wa.me/60177146309?text=Hai%20Syafiq,%20saya%20berminat%20dengan%20pakej%20ini:%20*X48%20MAX%20-%20800GB*%20RM48%20/%2030%20hari" target="_blank" class="btn btn-whatsapp">
+                                <i class="fab fa-whatsapp"></i> WhatsApp Dealer
+                            </a>
+                            <a href="https://onexox.my/onlinestore/dealer.php?dlr=DYSD90960" target="_blank" class="btn btn-outline">
+                                <i class="fas fa-shopping-cart"></i> Beli Terus Online
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- SUB-TAB CONTENT 2: Pakej Tempoh Sah -->
+            <!-- SUB-TAB CONTENT 2: Tempoh Sah -->
             <div id="sub-tempoh" class="sub-tab-content">
                 <div class="catalog-grid">
                     
                     <!-- Tempoh Sah 1: 6 BULAN -->
                     <div class="catalog-card">
-                        <div class="card-badge" style="background-color: #27ae60; color: #fff;">6 BULAN</div>
-                        <div class="card-category">Pakej Tempoh Sah</div>
+                        <div class="card-badge" style="background-color: #27ae60; color: #fff;">TEMPOH SAH</div>
+                        <div class="card-category">Tempoh Sah</div>
                         <h3 class="card-title">VALID 6 BULAN</h3>
-                        <div class="card-data">5GB <span>DATA</span></div>
+                        <div class="card-subtitle">Tempoh sah nombor</div>
+                        <div class="card-data">180 <span>hari</span></div>
                         <div class="card-price">RM30 <span>/ 180 hari</span></div>
-                        <div class="card-price-desc" style="border:none; margin-bottom: 25px; padding:0;">5GB untuk 30 hari pertama</div>
+                        <div class="card-price-desc" style="border:none; margin-bottom: 25px; padding:0;">5GB · Tempoh data berasingan; lihat butiran.</div>
                         
                         <ul class="card-features">
-                            <li><i class="fas fa-check-circle"></i> Validiti 180 hari</li>
-                            <li><i class="fas fa-check-circle"></i> 5GB untuk 30 hari pertama</li>
-                            <li><i class="fas fa-check-circle"></i> Basic Internet 512Kbps</li>
+                            <li><span style="margin-right: 12px; font-size: 1.1rem;">🛜</span> Boleh jadi data add-on jika ada pelan aktif</li>
+                            <li><span style="margin-right: 12px; font-size: 1.1rem;">📞</span> Tiada Talk Time, SMS dan hotspot</li>
                         </ul>
                         
                         <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
@@ -875,16 +861,16 @@
                     <!-- Tempoh Sah 2: 12 BULAN -->
                     <div class="catalog-card">
                         <div class="card-badge" style="background-color: #f39c12; color: #fff;">12 BULAN</div>
-                        <div class="card-category">Pakej Tempoh Sah</div>
+                        <div class="card-category">Tempoh Sah</div>
                         <h3 class="card-title">VALID 12 BULAN</h3>
-                        <div class="card-data">10GB <span>DATA</span></div>
+                        <div class="card-subtitle">Tempoh sah nombor</div>
+                        <div class="card-data">360 <span>hari</span></div>
                         <div class="card-price">RM48 <span>/ 360 hari</span></div>
-                        <div class="card-price-desc" style="border:none; margin-bottom: 25px; padding:0;">10GB untuk 30 hari pertama</div>
+                        <div class="card-price-desc" style="border:none; margin-bottom: 25px; padding:0;">10GB · Tempoh data berasingan; lihat butiran.</div>
                         
                         <ul class="card-features">
-                            <li><i class="fas fa-check-circle"></i> Validiti 360 hari</li>
-                            <li><i class="fas fa-check-circle"></i> 10GB untuk 30 hari pertama</li>
-                            <li><i class="fas fa-check-circle"></i> Basic Internet 512Kbps</li>
+                            <li><span style="margin-right: 12px; font-size: 1.1rem;">🛜</span> Boleh jadi data add-on jika ada pelan aktif</li>
+                            <li><span style="margin-right: 12px; font-size: 1.1rem;">📞</span> Tiada Talk Time, SMS dan hotspot</li>
                         </ul>
                         
                         <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
@@ -904,26 +890,47 @@
 
         <!-- TAB 2: POSTPAID -->
         <div id="tab-postpaid" class="tab-content">
-            <div style="text-align: center; margin-bottom: 40px;">
-                <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Plan Internet <span class="highlight">Postpaid</span></h3>
-                <p style="color: var(--gray-text);">Pilihan plan postpaid terbaik dan jimat</p>
-            </div>
-
             <div class="catalog-grid">
                 
-                <!-- Plan Postpaid 1: B50 -->
+                <!-- Plan Postpaid 1: B33 -->
+                <div class="catalog-card">
+                    <div class="card-badge" style="background-color: #2c3e50; color: #fff;">POSTPAID</div>
+                    <div class="card-category">Postpaid</div>
+                    <h3 class="card-title">B33</h3>
+                    <div class="card-subtitle">Mudah pilih. Mudah guna.</div>
+                    <div class="card-data">150GB <span>4G/5G</span></div>
+                    <div class="card-price">RM35 <span>/ bulanan</span></div>
+                    <div class="card-price-desc" style="border:none; margin-bottom: 25px; padding:0;">Harga termasuk SST</div>
+                    
+                    <ul class="card-features">
+                        <li><span style="margin-right: 12px; font-size: 1.1rem;">📞</span> Panggilan tanpa had ke semua rangkaian*</li>
+                        <li><span style="margin-right: 12px; font-size: 1.1rem;">🛜</span> Hotspot tanpa had*</li>
+                        <li><span style="margin-right: 12px; font-size: 1.1rem;">🎁</span> Percuma sehingga 2 bulan bil setahun*</li>
+                    </ul>
+                    
+                    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
+                        <a href="https://wa.me/60177146309?text=Hai%20Syafiq,%20saya%20berminat%20dengan%20pelan%20ini:%20*BLACK%20B33%20150GB*%20RM33%20/%20bulan%20%2B%20SST%206%25%20Percuma%20sehingga%202%20bulan%20bil%20setahun" target="_blank" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Dealer
+                        </a>
+                        <a href="https://onexox.my/onlinestore/dealer.php?dlr=DYSD90960" target="_blank" class="btn btn-outline">
+                            <i class="fas fa-shopping-cart"></i> Beli Terus Online
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Plan Postpaid 2: B50 -->
                 <div class="catalog-card">
                     <div class="card-badge">HOT SALE</div>
                     <div class="card-category">Postpaid</div>
                     <h3 class="card-title">B50</h3>
-                    <div class="card-data">600GB <span>DATA</span></div>
+                    <div class="card-subtitle">Data besar untuk hari yang sibuk.</div>
+                    <div class="card-data">600GB <span>4G/5G</span></div>
                     <div class="card-price">RM53 <span>/ bulanan</span></div>
-                    <div class="card-price-desc">RM50 sebelum SST • RM53 termasuk SST</div>
+                    <div class="card-price-desc" style="border:none; margin-bottom: 25px; padding:0;">Harga termasuk SST</div>
                     
                     <ul class="card-features">
-                        <li><i class="fas fa-check-circle"></i> 600GB data bulanan</li>
-                        <li><i class="fas fa-check-circle"></i> Unlimited Call*</li>
-                        <li><i class="fas fa-check-circle"></i> Hotspot tanpa had*</li>
+                        <li><span style="margin-right: 12px; font-size: 1.1rem;">📞</span> Panggilan tanpa had ke semua rangkaian*</li>
+                        <li><span style="margin-right: 12px; font-size: 1.1rem;">🛜</span> Hotspot tanpa had*</li>
                     </ul>
                     
                     <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
@@ -936,23 +943,30 @@
                     </div>
                 </div>
 
-                <!-- Plan Postpaid 2: MYSISWA35 -->
+            </div>
+        </div>
+
+        <!-- TAB 3: MYSISWA -->
+        <div id="tab-mysiswa" class="tab-content">
+            <div class="catalog-grid">
+                <!-- Plan MYSISWA 1 -->
                 <div class="catalog-card">
-                    <div class="card-badge" style="background-color: #3498db; color: #fff;">PELAJAR</div>
-                    <div class="card-category">Postpaid</div>
-                    <h3 class="card-title">MYSISWA35</h3>
-                    <div class="card-data">200GB <span>DATA</span></div>
+                    <div class="card-badge" style="background-color: #3498db; color: #fff;">UNTUK SEMUA</div>
+                    <div class="card-category">MYSISWA</div>
+                    <h3 class="card-title">MYSISWA</h3>
+                    <div class="card-subtitle">Satu pelan untuk setiap hari.</div>
+                    <div class="card-data">200GB <span>4G/5G</span></div>
                     <div class="card-price">RM37.10 <span>/ bulanan</span></div>
-                    <div class="card-price-desc">RM35 sebelum SST • RM37.10 termasuk SST</div>
+                    <div class="card-price-desc" style="border:none; margin-bottom: 25px; padding:0;">Harga termasuk SST</div>
                     
                     <ul class="card-features">
-                        <li><i class="fas fa-check-circle"></i> 200GB data bulanan</li>
-                        <li><i class="fas fa-check-circle"></i> Unlimited Call*</li>
-                        <li><i class="fas fa-check-circle"></i> Hotspot tanpa had*</li>
+                        <li><span style="margin-right: 12px; font-size: 1.1rem;">📞</span> Panggilan tanpa had ke semua rangkaian*</li>
+                        <li><span style="margin-right: 12px; font-size: 1.1rem;">🛜</span> Hotspot tanpa had*</li>
+                        <li><span style="margin-right: 12px; font-size: 1.1rem;">✅</span> 100 SMS</li>
                     </ul>
                     
                     <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
-                        <a href="https://wa.me/60177146309?text=Hai%20Syafiq,%20saya%20berminat%20dengan%20plan%20ini:%20*MYSISWA35%20-%20200GB%20DATA*%20RM37.10%20/%20bulanan%20termasuk%20SST" target="_blank" class="btn btn-whatsapp">
+                        <a href="https://wa.me/60177146309?text=Hai%20Syafiq%2C%20saya%20berminat%20dengan%20pelan%20ini%3A%0A*MYSISWA%20%E2%80%94%20200GB*%0ARM37.10%20termasuk%20SST%20%2F%20bulanan" target="_blank" class="btn btn-whatsapp">
                             <i class="fab fa-whatsapp"></i> WhatsApp Dealer
                         </a>
                         <a href="https://onexox.my/onlinestore/dealer.php?dlr=DYSD90960" target="_blank" class="btn btn-outline">
@@ -961,24 +975,24 @@
                     </div>
                 </div>
 
-                <!-- Plan Postpaid 3: BLACK B33 -->
+                <!-- Plan MYSISWA 2: MYSISWA PLUS -->
                 <div class="catalog-card">
-                    <div class="card-badge" style="background-color: #2c3e50; color: #fff;">POSTPAID</div>
-                    <div class="card-category">Postpaid</div>
-                    <h3 class="card-title">BLACK B33</h3>
-                    <div class="card-data">150GB <span>DATA</span></div>
-                    <div class="card-price">RM33 <span>/ bulan</span></div>
-                    <div class="card-price-desc">RM33 + SST 6% • Percuma hingga 2 bulan bil setahun*</div>
+                    <div class="card-badge" style="background-color: #8e44ad; color: #fff;">MAIN + 1–9 SUPP</div>
+                    <div class="card-category">MYSISWA</div>
+                    <h3 class="card-title">MYSISWA PLUS</h3>
+                    <div class="card-subtitle">Satu pelan untuk setiap hari.</div>
+                    <div class="card-data">150GB <span>4G/5G</span></div>
+                    <div class="card-price">RM37.10 <span>/ bulanan</span></div>
+                    <div class="card-price-desc" style="border:none; margin-bottom: 25px; padding:0;">+ 15GB/SUPP • Harga termasuk SST • Supp +RM10.60 setiap satu</div>
                     
                     <ul class="card-features">
-                        <li><i class="fas fa-check-circle"></i> 150GB data bulanan</li>
-                        <li><i class="fas fa-check-circle"></i> Unlimited Call*</li>
-                        <li><i class="fas fa-check-circle"></i> Hotspot tanpa had*</li>
-                        <li><i class="fas fa-check-circle"></i> Ganjaran 5+1: bulan ke-6 percuma</li>
+                        <li><span style="margin-right: 12px; font-size: 1.1rem;">✅</span> Boleh daftar talian utama sahaja</li>
+                        <li><span style="margin-right: 12px; font-size: 1.1rem;">✅</span> Boleh tambah 1 hingga 9 talian tambahan</li>
+                        <li><span style="margin-right: 12px; font-size: 1.1rem;">📞</span> Panggilan tanpa had ke semua rangkaian*</li>
                     </ul>
                     
                     <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
-                        <a href="https://wa.me/60177146309?text=Hai%20Syafiq,%20saya%20berminat%20dengan%20pelan%20ini:%20*BLACK%20B33%20150GB*%20RM33%20/%20bulan%20%2B%20SST%206%25%20Percuma%20sehingga%202%20bulan%20bil%20setahun" target="_blank" class="btn btn-whatsapp">
+                        <a href="https://wa.me/60177146309?text=Hai%20Syafiq,%20saya%20berminat%20dengan%20pelan%20ini:%0A*MYSISWA%20PLUS%20—%20150GB*%0ARM37.10%20/%20bulanan%20termasuk%20SST" target="_blank" class="btn btn-whatsapp">
                             <i class="fab fa-whatsapp"></i> WhatsApp Dealer
                         </a>
                         <a href="https://onexox.my/onlinestore/dealer.php?dlr=DYSD90960" target="_blank" class="btn btn-outline">
@@ -1001,7 +1015,7 @@
             
             <div class="highlight-box">
                 <p style="margin: 0; color: #fff;">
-                    <i class="fas fa-shipping-fast" style="color: var(--primary-color); font-size: 1.5rem; margin-right: 10px; vertical-align: middle;"></i> 
+                    <i class="fas fa-shipping-fast" style="color: var(--primary-color); font-size: 1.5rem; margin-right: 10px; vertical-align: middle;"></i>
                     <strong>HQ ONEXOX akan menghantar simkad terus ke alamat rumah anda.</strong> Mudah, cepat dan tak perlu keluar rumah.
                 </p>
             </div>
@@ -1020,7 +1034,7 @@
 
     <!-- JavaScript -->
     <script>
-        // Main Tab Functionality (Prabayar vs Postpaid)
+        // Main Tab Functionality (Prabayar vs Postpaid vs MYSISWA)
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
             
@@ -1048,7 +1062,7 @@
             evt.currentTarget.className += " active";
         }
 
-        // Sub Tab Functionality (Plan Internet vs Pakej Tempoh Sah)
+        // Sub Tab Functionality (Internet vs Tempoh Sah)
         function openSubTab(evt, tabName) {
             var i, tabcontent, tablinks;
             
